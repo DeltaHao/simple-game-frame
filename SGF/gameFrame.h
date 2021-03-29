@@ -16,5 +16,5 @@ private:
 	SDL_Renderer* pRenderer = NULL;//渲染器指针 
 	TTF_Font* pDefFont = NULL;//游戏资源
 
-	int renderFPS(float);
+	void renderFPS(float);
 };

@@ -29,8 +29,8 @@ public:
 
 	
 	virtual ~Game() {};
-	virtual int init() { return 1; };							//初始化游戏
-	virtual int loadResource(SDL_Renderer*) { return 1; };		//加载游戏资源
+	virtual bool init() { return 1; };							//初始化游戏
+	virtual bool loadResource(HINSTANCE, SDL_Renderer*) { return true; };		//加载游戏资源
 	virtual void processEvent(SDL_Event*) {};					//处理游戏事件
 	virtual void update() {};									//更新游戏数据
 	virtual void render(SDL_Window*, SDL_Renderer*) {};			//渲染游戏画面

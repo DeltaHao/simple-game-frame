@@ -83,7 +83,7 @@ bool GameFrame::init(HINSTANCE hin)
 	}
 
 	//加载资源
-	ret = game->loadResource(pRenderer);
+	ret = game->loadResource(hinstance, pRenderer);
 	if (!ret) {
 		SDL_Log("Unable to load resource");
 		return false;
@@ -142,7 +142,7 @@ void GameFrame::run()
 	
 }
 
-int GameFrame::renderFPS(float elapsed)
+void GameFrame::renderFPS(float elapsed)
 {
 	static float _totalTime = 0;
 	static int _fps = 0;
@@ -175,19 +175,16 @@ int GameFrame::renderFPS(float elapsed)
 
 	//渲染文字
 	SDL_Color color = { 255, 255, 255, 255 };
-	if (system) {
-		SDL_Surface* surf = TTF_RenderText_Blended(pDefFont, fpsText, color);
-		if (surf) {
-			SDL_Texture* texture = SDL_CreateTextureFromSurface(pRenderer, surf);
-			if (texture) {
-				SDL_RenderCopy(pRenderer, texture, NULL, &dst);
-				SDL_DestroyTexture(texture);
-			}
-			SDL_FreeSurface(surf);
+	SDL_Surface* surf = TTF_RenderText_Blended(pDefFont, fpsText, color);
+	if (surf) {
+		SDL_Texture* texture = SDL_CreateTextureFromSurface(pRenderer, surf);
+		if (texture) {
+			SDL_RenderCopy(pRenderer, texture, NULL, &dst);
+			SDL_DestroyTexture(texture);
 		}
+		SDL_FreeSurface(surf);
 	}
-
-	return 0;
+	
 }
 
 GameFrame::~GameFrame()
