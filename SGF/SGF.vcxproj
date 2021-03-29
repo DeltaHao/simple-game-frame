@@ -144,11 +144,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="game.cpp" />
     <ClCompile Include="gameFrame.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="sgfHelper.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="interface.h" />
     <ClInclude Include="libs.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameFrame.h" />
@@ -160,6 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="res\fonts\courbd.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ico\favicon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,7 +2,6 @@
 
 #include"game.h"
 
-
 class GameFrame {
 public:
 	bool init(HINSTANCE);

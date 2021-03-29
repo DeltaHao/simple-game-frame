@@ -13,33 +13,42 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="游戏框架">
+      <UniqueIdentifier>{bacdfe14-9415-4713-b7e5-4df78b571483}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="game.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="gameFrame.cpp">
-      <Filter>源文件</Filter>
+      <Filter>游戏框架</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>游戏框架</Filter>
     </ClCompile>
     <ClCompile Include="sgfHelper.c">
-      <Filter>源文件</Filter>
+      <Filter>游戏框架</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="libs.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="game.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="gameFrame.h">
-      <Filter>头文件</Filter>
+      <Filter>游戏框架</Filter>
+    </ClInclude>
+    <ClInclude Include="interface.h">
+      <Filter>游戏框架</Filter>
+    </ClInclude>
+    <ClInclude Include="libs.h">
+      <Filter>游戏框架</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
-      <Filter>头文件</Filter>
+      <Filter>游戏框架</Filter>
     </ClInclude>
     <ClInclude Include="sgfHelper.h">
-      <Filter>头文件</Filter>
+      <Filter>游戏框架</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -49,5 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="res\fonts\courbd.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ico\favicon.ico">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>

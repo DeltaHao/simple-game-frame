@@ -45,6 +45,7 @@ bool GameFrame::init(HINSTANCE hin)
 		return NULL;
 	}
 
+
 	//初始化游戏
 	game = new Game();
 	ret = game->init();
@@ -54,13 +55,21 @@ bool GameFrame::init(HINSTANCE hin)
 	}
 
 	//创建窗口
-	pWin = SDL_CreateWindow(game->title.data(), 
+	char winName[MAX_WIN_NAME] = { 0 };
+	GBKToUTF8(game->title.data(), -1, winName, MAX_WIN_NAME);
+	pWin = SDL_CreateWindow(winName,
 		SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 
 		game->w, game->h,
 		(game->isResizable) ? SDL_WINDOW_RESIZABLE : 0);
 	if (!pWin) {
 		SDL_Log("Unable to initialize SDL: %s\n", SDL_GetError());
 		return false;
+	}
+	//设置图标
+	SDL_Surface* iconSurface = IMG_Load("res\res\ico\favicon.ico");
+	if (iconSurface) {
+		SDL_SetWindowIcon(pWin, iconSurface);
+		SDL_FreeSurface(iconSurface);
 	}
 
 	//创建渲染器
@@ -81,14 +90,15 @@ bool GameFrame::init(HINSTANCE hin)
 		SDL_Log("Could not open font: %s\n", SDL_GetError());
 		return false;
 	}
+	return true;
 
-	//加载资源
+
+	//加载游戏资源
 	ret = game->loadResource(hinstance, pRenderer);
 	if (!ret) {
 		SDL_Log("Unable to load resource");
 		return false;
 	}
-	return true;
 }
 
 void GameFrame::run()
@@ -133,7 +143,7 @@ void GameFrame::run()
 			SDL_RenderClear(pRenderer);
 			//渲染图像
 			game->render(pWin, pRenderer);
-			//渲染帧率	 
+			//显示渲染帧率	 
 			renderFPS(elapsed);
 			//翻转缓冲
 			SDL_RenderPresent(pRenderer);

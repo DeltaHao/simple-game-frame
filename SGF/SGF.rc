@@ -52,6 +52,17 @@ END
 
 IDR_FONT1               FONT                    "res\\fonts\\courbd.ttf"
 
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+
+IDI_ICON1               ICON                    "res\\ico\\favicon.ico"
+
 #endif    // 中文(简体，中国) resources
 /////////////////////////////////////////////////////////////////////////////
 
