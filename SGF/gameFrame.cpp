@@ -162,6 +162,7 @@ int GameFrame::renderFPS(float elapsed)
 		++_fpsCount;
 	}
 
+
 	//计算文字大小
 	char fpsText[256] = { 0 };
 	sprintf_s(fpsText, 255, "FPS: %d", _fps);
@@ -171,16 +172,19 @@ int GameFrame::renderFPS(float elapsed)
 		SDL_Log("get text size failed: %s\n", TTF_GetError());
 	}
 
+
 	//渲染文字
 	SDL_Color color = { 255, 255, 255, 255 };
-	SDL_Surface* surf = TTF_RenderText_Blended(pDefFont, fpsText, color);
-	if (surf) {
-		SDL_Texture* texture = SDL_CreateTextureFromSurface(pRenderer, surf);
-		if (texture) {
-			SDL_RenderCopy(pRenderer, texture, NULL, &dst);
-			SDL_DestroyTexture(texture);
+	if (system) {
+		SDL_Surface* surf = TTF_RenderText_Blended(pDefFont, fpsText, color);
+		if (surf) {
+			SDL_Texture* texture = SDL_CreateTextureFromSurface(pRenderer, surf);
+			if (texture) {
+				SDL_RenderCopy(pRenderer, texture, NULL, &dst);
+				SDL_DestroyTexture(texture);
+			}
+			SDL_FreeSurface(surf);
 		}
-		SDL_FreeSurface(surf);
 	}
 
 	return 0;
