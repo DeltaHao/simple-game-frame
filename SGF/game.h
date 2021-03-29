@@ -19,7 +19,7 @@ const int DEFAULT_FPS = 60;
 const int DEFAULT_WINDOW_WIDTH = 800;
 const int DEFAULT_WINDOW_HEIGHT = 600;
 
-class GameInterface{
+class Game{
 public:
 	std::string  title = APP_WIN_NAME;							//游戏标题
 	unsigned int w = DEFAULT_WINDOW_WIDTH;
@@ -28,7 +28,7 @@ public:
 	bool isResizable = 0;										//窗口大小是否可调节
 
 	
-	virtual ~GameInterface() {};
+	virtual ~Game() {};
 	virtual int init() { return 1; };							//初始化游戏
 	virtual int loadResource(SDL_Renderer*) { return 1; };		//加载游戏资源
 	virtual void processEvent(SDL_Event*) {};					//处理游戏事件

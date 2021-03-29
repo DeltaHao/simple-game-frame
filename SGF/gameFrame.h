@@ -1,6 +1,6 @@
 #pragma once
 
-#include"gameInterface.h"
+#include"game.h"
 
 
 class GameFrame {
@@ -9,7 +9,7 @@ public:
 	void run();	
 	~GameFrame();
 private:
-	GameInterface* game = NULL;//游戏
+	Game* game = NULL;//游戏
 
 	HINSTANCE hinstance = NULL;//应用实例句柄
 	SDL_Window* pWin = NULL;//窗口指针

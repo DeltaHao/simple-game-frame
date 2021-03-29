@@ -21,7 +21,7 @@
     <ClCompile Include="gameFrame.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="sgfhelper.c">
+    <ClCompile Include="sgfHelper.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="libs.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="gameInterface.h">
+    <ClInclude Include="game.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="gameFrame.h">
@@ -38,7 +38,7 @@
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="sgfhelper.h">
+    <ClInclude Include="sgfHelper.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

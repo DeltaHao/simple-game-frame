@@ -1,5 +1,5 @@
 #include "gameFrame.h"
-#include "sgfhelper.h"
+#include "sgfHelper.h"
 
 bool GameFrame::init(HINSTANCE hin)
 {
@@ -46,7 +46,7 @@ bool GameFrame::init(HINSTANCE hin)
 	}
 
 	//³õÊ¼»¯ÓÎÏ·
-	game = new GameInterface();
+	game = new Game();
 	ret = game->init();
 	if (!ret) {
 		SDL_Log("Unable to initialize game\n");

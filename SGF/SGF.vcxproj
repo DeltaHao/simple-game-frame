@@ -146,14 +146,14 @@
   <ItemGroup>
     <ClCompile Include="gameFrame.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="sgfhelper.c" />
+    <ClCompile Include="sgfHelper.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs.h" />
-    <ClInclude Include="gameInterface.h" />
+    <ClInclude Include="game.h" />
     <ClInclude Include="gameFrame.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="sgfhelper.h" />
+    <ClInclude Include="sgfHelper.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SGF.rc" />
